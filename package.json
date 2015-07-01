@@ -1,0 +1,16 @@
+{
+  "name": "twitch-api",
+  "version": "0.0.1",
+  "description": "simple javascript wrapper for the twitch.tv api",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "build-test": "browserify -d -t babelify test/index.js -o test/bundle.js",
+    "test": "opener http://localhost:3000/test/index.html",
+    "pretest": "npm run build-test",
+    "build": "browserify -d -t babelify src/client/index.js -o app/client/twitchDash.js",
+    "start": "serve -p 3000 . & opener http://localhost:3000/app/client"
+  },
+  "author": "K. P. MacGregor <phoenixstormcrow@gmail.com>",
+  "license": "MIT"
+}
